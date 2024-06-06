@@ -1,5 +1,5 @@
-# Primeiro modulo DDS19-1-19 T
-Primeiros passos JavaScript :smiley:
+# Primeiro modulo DDS19-1-19
+Primeiros passos JavaScript :sunglasses:
 
 Trabalhando com:
 - Variaveis;
