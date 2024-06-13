@@ -1,0 +1,31 @@
+ls          = arquivos da locais
+pwd         = endereco atual
+clear       = limpar
+ctrl + c    = fechador de processo
+
+git init = cria pasta .git //( pasta principal )
+    U = "Untracked" -- new archive
+    A = "Added"     -- added archive
+    M = "Modfied"   -- modified archive
+
+[a cada maquina diferente]
+git config user.email "renan.s.nunes@aluno.senai.br" = configurar email
+git config user.name "Renan Nunes" = nome do altor da alteração
+
+git add . = adiciona diretoria atual //( a cada mudança )
+
+git branch -M main = trocar branch para main
+
+git commit -m "msg" = msg norteadora
+    commit = verificação do estado atual do arquivo, salvando-o
+
+git remote add origin https://github.com/username/repositoryname.git (diretorio)
+    origin -- diretorio de repositorio remoto
+
+git push -u origin main = jogar pra nuvem (nuvem main)
+    -u origin -- caminho
+
+git pull = baixa versoes
+
+git clone https://github.com/username/repositoryname.git (diretorio) . = clona diretorio sem criar pasta nova
+git clone https://github.com/username/repositoryname.git (diretorio) = pegar diretorio sem criar pasta nova
