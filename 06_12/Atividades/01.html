@@ -18,13 +18,13 @@
     //alert("Média das notas: " + media + "");
     //document.write(media)
     //document.setElementById('result').value = media
-    alert(h1.value)
-    document.setElementById('result').value = 'sadsds'
+    
+    
     return media
     }
 
     function funcao() {
-    document.getElementById("paragrafo").innerHTML = "Pronto você mudou o texto (y)";
+       document.getElementById("result").innerHTML = "Media = " + calculoMedia();
     }
 
 //   nota1 = window.prompt("Informe a 1° Nota do Aluno")
@@ -54,9 +54,9 @@
     <br><br>
     <button onclick="funcao()">Clique aqui</button>
     
-    document.body.innerHTML = "<h1>Media = " </h1>"
+    
     <h2 id='result'></h2>
-    <p id="paragrafo">Clique no botão para mudar o texto</p>
+    <!-- <p id="paragrafo">Clique no botão para mudar o texto</p> -->
   </form>
   
 </body>
