@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-
 <head>
   <meta charset="UTF-8" />
   <!--  
@@ -15,47 +14,37 @@
     var n3 = parseInt(document.getElementById('n3').value);
     var n4 = parseInt(document.getElementById('n4').value);
     media = (n1 + n2 + n3 + n4) / 4;
-    //alert("Média das notas: " + media + "");
-    //document.write(media)
-    //document.setElementById('result').value = media
-    
-    
     return media
     }
 
-    function funcao() {
-       document.getElementById("result").innerHTML = "Media = " + calculoMedia();
+    function resultado() {
+       document.getElementById("result").innerHTML = "Resultado = ( " + calculoMedia().toFixed(2) + " )";
     }
 
-//   nota1 = window.prompt("Informe a 1° Nota do Aluno")
-//   nota1 = Number(nota1)
-//   document.write("Olá mundo!")
-    </script>
+</script>
   <title>Exercício 01</title>
 </head>
 
 <body>
-    <form>
-        <label for="n1">Entre com a nota 01 : </label>
-        <input type="text" id="n1" name="n1"><br><br>
+    <div>
+        <form>
+            <label for="n1">Entre com a nota 01 : </label>
+            <input type="text" id="n1" name="n1"><br><br>
+            <label for="n2">Entre com a nota 02 : </label>
+            <input type="text" id="n2" name="n2"><br><br>
+            <label for="n3">Entre com a nota 03 : </label>
+            <input type="text" id="n3" name="n3"><br><br>
+            <label for="n4">Entre com a nota 04 : </label>
+            <input type="text" id="n4" name="n3"><br><br>
+        </form>
+    </div>
 
-        <label for="n2">Entre com a nota 02 : </label>
-        <input type="text" id="n2" name="n2"><br><br>
-
-        <label for="n3">Entre com a nota 03 : </label>
-        <input type="text" id="n3" name="n3"><br><br>
-
-        <label for="n4">Entre com a nota 04 : </label>
-        <input type="text" id="n4" name="n3"><br><br>
-
-      </form>
-
-    <input type="button" onclick="javascript:calculoMedia();" value="Calcular Média">
+    <!-- <input type="button" onclick="javascript:calculoMedia();" value="Calcular Média"> -->
     <br><br>
-    <button onclick="funcao()">Clique aqui</button>
+    <button alling="center" onclick="resultado()">Calcular a Média</button>
     
     
-    <h2 id='result'></h2>
+    <h2 id='result'>Resultado = </h2>
     <!-- <p id="paragrafo">Clique no botão para mudar o texto</p> -->
   </form>
   
