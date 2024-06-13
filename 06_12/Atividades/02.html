@@ -1,0 +1,53 @@
+<!--
+2.  Desenvolva um programa que leia a idade de uma pessoa e determine a sua 
+    categoria: infantil (0-12 anos), adolescente (13-17 anos), 
+    adulto (18-59 anos) ou idoso (60 anos ou mais).
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <script>
+      language = 'JavaScript'
+      function calculoMedia() {
+        var retorno = ' '
+        var categoria
+        var n1 = parseInt(document.getElementById('n1').value)
+        categoria = n1
+        if (categoria >= 60) {
+          retorno = 'IDOSO | Idade igual a 60 anos ou superior'
+        } else if (categoria >= 18) {
+          retorno = 'ADULTO | Idade entre 18 e 59 anos'
+        } else if (categoria >= 13) {
+          retorno = 'ADOLESCENTE | Idade entre 13 e 17 anos'
+        } else if (categoria < 13) {
+          retorno = 'INFANTIL | Idade menor que 13'
+        }
+        return retorno
+      }
+
+      function resultado() {
+        var vTemp = ''
+        vTemp = calculoMedia()
+        document.getElementById('result').innerHTML = vTemp
+      }
+    </script>
+    <title>Exercício 02</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Exercício 02</h1>
+      <form>
+        <label for="n1">Entre com a idade da pessoa : </label>
+        <input type="text" id="n1" name="n1" /><br /><br />
+      </form>
+      <br /><br />
+      <button alling="center" onclick="resultado()">
+        Clique aqui p/ determinar a Categoria por idade
+      </button>
+      <h2 id="result"></h2>
+    </div>
+  </body>
+</html>

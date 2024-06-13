@@ -1,0 +1,50 @@
+<!--
+4. Escreva um programa que receba um ano e determine se ele é bissexto.
+Como se calcula se um ano é bissexto?
+https://ihgms.org.br/vc-sabia/como-se-calcula-se-um-ano-e-bissexto-227#:~:text=Para%20se%20saber%20se%20qualquer,foi%20bissexto%3B%20b)%201998.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <script>
+      language = 'JavaScript'
+      function calculoMedia() {
+        var retorno = ' '
+        var ano, calc
+        var n1 = parseInt(document.getElementById('n1').value)
+        ano = n1
+        calc = ano % 100
+        if (calc >= 10 && calc % 4 == 0) {
+          retorno = 'Este ano É bissexto'
+        } else {
+          retorno = 'Este NÃO é bissexto'
+        }
+        return retorno
+      }
+
+      function resultado() {
+        var vTemp = ''
+        vTemp = calculoMedia()
+        document.getElementById('result').innerHTML = vTemp
+      }
+    </script>
+    <title>Exercício 04</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Exercício 04</h1>
+      <form>
+        <label for="n1">Entre com um ano : </label>
+        <input type="text" id="n1" name="n1" /><br /><br />
+      </form>
+      <br /><br />
+      <button onclick="resultado()">
+        Clique aqui para saber se é bissexto
+      </button>
+      <h2 id="result"></h2>
+    </div>
+  </body>
+</html>

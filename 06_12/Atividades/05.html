@@ -1,0 +1,41 @@
+<!--
+5. Implemente um algoritmo que exiba todos os números pares de 1 a 50.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <script>
+      language = 'JavaScript'
+      function calculoMedia() {
+        var retorno = '| '
+        var ano, calc
+        for (var i = 1; i <= 50; i++) {
+          if (i % 2 == 0) {
+            retorno = retorno + i + ' | \n'
+          }
+        }
+        return retorno
+      }
+      function resultado() {
+        var vTemp = ''
+        vTemp = calculoMedia()
+        document.getElementById('result').innerHTML = vTemp
+      }
+    </script>
+    <title>Exercício 05</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Exercício 05</h1>
+      <form></form>
+      <br /><br />
+      <button onclick="resultado()">
+        Clique aqui para exibir numero pares de 1 a 50
+      </button>
+      <h2 id="result"></h2>
+    </div>
+  </body>
+</html>

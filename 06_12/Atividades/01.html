@@ -1,53 +1,68 @@
-<!DOCTYPE HTML>
+<!--
+1.  Escreva um algoritmo que calcule a média de quatro notas e determine se o 
+    aluno foi aprovado (média >= 7), em recuperação (média >= 5 e < 7) 
+    ou reprovado (média < 5).
+-->
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8" />
-  <!--  
-    <script language="JavaScript" src="./01.js"></script>  
-    --> 
-    <script> language="JavaScript"
-    function calculoMedia()
-    {
-    var media;
-    var n1 = parseInt(document.getElementById('n1').value);
-    var n2 = parseInt(document.getElementById('n2').value);
-    var n3 = parseInt(document.getElementById('n3').value);
-    var n4 = parseInt(document.getElementById('n4').value);
-    media = (n1 + n2 + n3 + n4) / 4;
-    return media
-    }
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <script>
+      language = 'JavaScript'
+      function calculoMedia() {
+        var retorno = ' '
+        var media
+        var n1 = parseInt(document.getElementById('n1').value)
+        var n2 = parseInt(document.getElementById('n2').value)
+        var n3 = parseInt(document.getElementById('n3').value)
+        var n4 = parseInt(document.getElementById('n4').value)
+        media = (n1 + n2 + n3 + n4) / 4
+        if (media >= 7) {
+          retorno = 'APROVADO | Media igual a : ' + media.toFixed(2)
+        } else if (media >= 5) {
+          retorno = 'RECUPERAÇÃO | Media igual a : ' + media.toFixed(2)
+        } else if (media < 5) {
+          retorno = 'REPROVADO | Media igual a : ' + media.toFixed(2)
+        } else if ((media = 'NaN')) {
+          media = ''
+        }
+        //alert(retorno)
+        return retorno
+      }
 
-    function resultado() {
-       document.getElementById("result").innerHTML = "Resultado = ( " + calculoMedia().toFixed(2) + " )";
-    }
+      function resultado() {
+        var vTemp = ''
+        vTemp = calculoMedia()
+        //        vTemp = vTemp + calculoMedia().toFixed(2)
+        //vTemp = vTemp + calculoMedia()
+        document.getElementById('result').innerHTML = vTemp
+        //document.getElementById('result').innerHTML ='Resultado = ( ' + calculoMedia().toFixed(2) + ' )'
+      }
+    </script>
+    <title>Exercício 01</title>
+  </head>
 
-</script>
-  <title>Exercício 01</title>
-</head>
-
-<body>
+  <body>
     <div>
-        <form>
-            <label for="n1">Entre com a nota 01 : </label>
-            <input type="text" id="n1" name="n1"><br><br>
-            <label for="n2">Entre com a nota 02 : </label>
-            <input type="text" id="n2" name="n2"><br><br>
-            <label for="n3">Entre com a nota 03 : </label>
-            <input type="text" id="n3" name="n3"><br><br>
-            <label for="n4">Entre com a nota 04 : </label>
-            <input type="text" id="n4" name="n3"><br><br>
-        </form>
+      <h1>Exercício 01</h1>
+      <form>
+        <label for="n1">Entre com a nota 01 : </label>
+        <input type="text" id="n1" name="n1" /><br /><br />
+        <label for="n2">Entre com a nota 02 : </label>
+        <input type="text" id="n2" name="n2" /><br /><br />
+        <label for="n3">Entre com a nota 03 : </label>
+        <input type="text" id="n3" name="n3" /><br /><br />
+        <label for="n4">Entre com a nota 04 : </label>
+        <input type="text" id="n4" name="n3" /><br /><br />
+      </form>
+      <!-- <input type="button" onclick="javascript:calculoMedia();" value="Calcular Média"> -->
+      <br /><br />
+      <button alling="center" onclick="resultado()">
+        CLique aqui para calcular a média
+      </button>
+      <h2 id="result"></h2>
+      <!-- <p id="paragrafo">Clique no botão para mudar o texto</p> -->
     </div>
-
-    <!-- <input type="button" onclick="javascript:calculoMedia();" value="Calcular Média"> -->
-    <br><br>
-    <button alling="center" onclick="resultado()">Calcular a Média</button>
-    
-    
-    <h2 id='result'>resultadO = </h2>
-    <!-- <p id="paragrafo">Clique no botão para mudar o texto</p> -->
-  </form>
-  
-</body>
-
+  </body>
 </html>

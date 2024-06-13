@@ -1,0 +1,47 @@
+<!--
+3. Crie um algoritmo que leia um número e verifique se ele é par ou ímpar.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <script>
+      language = 'JavaScript'
+      function calculoMedia() {
+        var retorno = ' '
+        var imparPar
+        var n1 = parseInt(document.getElementById('n1').value)
+        imparPar = n1
+        if (imparPar % 2 == 0) {
+          retorno = 'Este numero é PAR'
+        } else {
+          retorno = 'Este numero é IMPAR'
+        }
+        return retorno
+      }
+
+      function resultado() {
+        var vTemp = ''
+        vTemp = calculoMedia()
+        document.getElementById('result').innerHTML = vTemp
+      }
+    </script>
+    <title>Exercício 03</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Exercício 03</h1>
+      <form>
+        <label for="n1">Entre com um numero : </label>
+        <input type="text" id="n1" name="n1" /><br /><br />
+      </form>
+      <br /><br />
+      <button alling="center" onclick="resultado()">
+        Clique aqui para saber se é PAR ou IMPAR
+      </button>
+      <h2 id="result"></h2>
+    </div>
+  </body>
+</html>
