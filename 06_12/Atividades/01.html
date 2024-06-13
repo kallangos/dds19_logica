@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <!--  
+    <script language="JavaScript" src="./01.js"></script>  
+    --> 
+    <script> language="JavaScript"
+    function calculoMedia()
+    {
+    var media;
+    var n1 = parseInt(document.getElementById('n1').value);
+    var n2 = parseInt(document.getElementById('n2').value);
+    var n3 = parseInt(document.getElementById('n3').value);
+    var n4 = parseInt(document.getElementById('n4').value);
+    media = (n1 + n2 + n3 + n4) / 4;
+    //alert("Média das notas: " + media + "");
+    //document.write(media)
+    //document.setElementById('result').value = media
+    alert(h1.value)
+    document.setElementById('result').value = 'sadsds'
+    return media
+    }
+
+    function funcao() {
+    document.getElementById("paragrafo").innerHTML = "Pronto você mudou o texto (y)";
+    }
+
+//   nota1 = window.prompt("Informe a 1° Nota do Aluno")
+//   nota1 = Number(nota1)
+//   document.write("Olá mundo!")
+    </script>
+  <title>Exercício 01</title>
+</head>
+
+<body>
+    <form>
+        <label for="n1">Entre com a nota 01 : </label>
+        <input type="text" id="n1" name="n1"><br><br>
+
+        <label for="n2">Entre com a nota 02 : </label>
+        <input type="text" id="n2" name="n2"><br><br>
+
+        <label for="n3">Entre com a nota 03 : </label>
+        <input type="text" id="n3" name="n3"><br><br>
+
+        <label for="n4">Entre com a nota 04 : </label>
+        <input type="text" id="n4" name="n3"><br><br>
+
+      </form>
+
+    <input type="button" onclick="javascript:calculoMedia();" value="Calcular Média">
+    <br><br>
+    <button onclick="funcao()">Clique aqui</button>
+    
+    document.body.innerHTML = "<h1>Media = " </h1>"
+    <h2 id='result'></h2>
+    <p id="paragrafo">Clique no botão para mudar o texto</p>
+  </form>
+  
+</body>
+
+</html>
