@@ -8,23 +8,17 @@
     <meta charset="UTF-8" />
     <script>
       language = 'JavaScript'
-      function calculoMedia() {
-        var retorno = ' '
-        var ano, calc
-        var n1 = parseInt(document.getElementById('n1').value)
-        ano = n1
-        calc = ano % 100
-        if (calc >= 10 && calc % 4 == 0) {
-          retorno = 'Este ano É bissexto'
-        } else {
-          retorno = 'Este NÃO é bissexto'
+      function fatorial() {
+        var n = parseInt(document.getElementById('n1').value)
+        let resultado = 1
+        for (let i = n; i > 1; i--) {
+          resultado *= i
         }
-        return retorno
+        return resultado
       }
-
       function resultado() {
         var vTemp = ''
-        vTemp = calculoMedia()
+        vTemp = fatorial()
         document.getElementById('result').innerHTML = vTemp
       }
     </script>
@@ -39,7 +33,7 @@
         <input type="text" id="n1" name="n1" /><br /><br />
       </form>
       <br /><br />
-      <button onclick="resultado()">
+      <button align="center" onclick="resultado()">
         Clique aqui para visualizar o fatorial
       </button>
       <h2 id="result"></h2>

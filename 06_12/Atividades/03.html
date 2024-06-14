@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <script>
       language = 'JavaScript'
-      function calculoMedia() {
+      function ParImpar() {
         var retorno = ' '
         var imparPar
         var n1 = parseInt(document.getElementById('n1').value)
@@ -23,7 +23,7 @@
 
       function resultado() {
         var vTemp = ''
-        vTemp = calculoMedia()
+        vTemp = ParImpar()
         document.getElementById('result').innerHTML = vTemp
       }
     </script>
@@ -38,7 +38,7 @@
         <input type="text" id="n1" name="n1" /><br /><br />
       </form>
       <br /><br />
-      <button alling="center" onclick="resultado()">
+      <button align="center" onclick="resultado()">
         Clique aqui para saber se é PAR ou IMPAR
       </button>
       <h2 id="result"></h2>

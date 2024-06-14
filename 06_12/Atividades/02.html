@@ -10,7 +10,7 @@
     <meta charset="UTF-8" />
     <script>
       language = 'JavaScript'
-      function calculoMedia() {
+      function faixaEtaria() {
         var retorno = ' '
         var categoria
         var n1 = parseInt(document.getElementById('n1').value)
@@ -29,7 +29,7 @@
 
       function resultado() {
         var vTemp = ''
-        vTemp = calculoMedia()
+        vTemp = faixaEtaria()
         document.getElementById('result').innerHTML = vTemp
       }
     </script>
@@ -44,7 +44,7 @@
         <input type="text" id="n1" name="n1" /><br /><br />
       </form>
       <br /><br />
-      <button alling="center" onclick="resultado()">
+      <button align="center" onclick="resultado()">
         Clique aqui p/ determinar a Categoria por idade
       </button>
       <h2 id="result"></h2>

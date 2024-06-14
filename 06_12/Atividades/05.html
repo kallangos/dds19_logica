@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <script>
       language = 'JavaScript'
-      function calculoMedia() {
+      function exibirPares() {
         var retorno = '| '
         var ano, calc
         for (var i = 1; i <= 50; i++) {
@@ -20,7 +20,7 @@
       }
       function resultado() {
         var vTemp = ''
-        vTemp = calculoMedia()
+        vTemp = exibirPares()
         document.getElementById('result').innerHTML = vTemp
       }
     </script>
@@ -32,7 +32,7 @@
       <h1>Exercício 05</h1>
       <form></form>
       <br /><br />
-      <button onclick="resultado()">
+      <button align="center" onclick="resultado()">
         Clique aqui para exibir numero pares de 1 a 50
       </button>
       <br /><br />
