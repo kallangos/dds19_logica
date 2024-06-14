@@ -1,0 +1,60 @@
+<!--
+8. Desenvolva um programa que leia 5 números e armazene em um array. 
+Em seguida, exiba os números na ordem inversa.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <script>
+      language = 'JavaScript'
+      function exibaReverso() {
+        var retorno = ''
+        let sequencia = []
+
+        for (let i = 0; i < 5; i++) {
+          sequencia[i] = parseInt(document.getElementById(`n${i}`).value)
+        }
+        sequencia.reverse()
+        retorno = sequencia
+
+        for (let i = 0; i < 5; i++) {
+          if (Number.isNaN(sequencia[i])) {
+            retorno = 'Entre com todos os numeros.'
+          }
+        }
+        return retorno
+      }
+
+      function resultado() {
+        var vTemp = ''
+        vTemp = exibaReverso()
+        document.getElementById('result').innerHTML = vTemp
+      }
+    </script>
+    <title>Exercício 08</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>Exercício 08</h1>
+      <form>
+        <label for="n1">Entre 01º numero : </label>
+        <input type="text" id="n0" name="n0" /><br /><br />
+        <label for="n2">Entre 02º numero : </label>
+        <input type="text" id="n1" name="n1" /><br /><br />
+        <label for="n3">Entre 03º numero : </label>
+        <input type="text" id="n2" name="n2" /><br /><br />
+        <label for="n4">Entre 04º numero : </label>
+        <input type="text" id="n3" name="n3" /><br /><br />
+        <label for="n5">Entre 05º numero : </label>
+        <input type="text" id="n4" name="n4" /><br /><br />
+      </form>
+      <button align="center" onclick="resultado()">
+        CLique aqui para calcular a média
+      </button>
+      <h2 id="result"></h2>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 <!--
-7. Escreva um algoritmo que leia 10 números e conte quantos são 
-   positivos e quantos são negativos.
+9. Crie um algoritmo que leia 10 números e armazene em um array. 
+Em seguida, calcule e exiba a soma de todos os números armazenados.
 -->
 <!DOCTYPE html>
 <html>
@@ -9,31 +9,20 @@
     <meta charset="UTF-8" />
     <script>
       language = 'JavaScript'
-      function numerosPositivosNegativos() {
-        var retorno = ' '
+      function somaElementos() {
+        var retorno = ''
+        var soma = 0
         let sequencia = []
-        var positivo = 0,
-          negativo = 0
 
         for (let i = 0; i < 10; i++) {
           sequencia[i] = parseInt(document.getElementById(`n${i}`).value)
-          if (sequencia[i] >= 0) {
-            positivo++
-          } else {
-            negativo++
-          }
+          soma = soma + sequencia[i]
         }
+        retorno = soma
 
-        retorno =
-          'Existem ' +
-          positivo +
-          ' numero(s) positivo(s) \n\r e ' +
-          negativo +
-          ' numero(s) negativo(s)'
-
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 5; i++) {
           if (Number.isNaN(sequencia[i])) {
-            retorno = 'Favor lançar todos os numeros.'
+            retorno = 'Entre com todos os numeros.'
           }
         }
         return retorno
@@ -41,16 +30,16 @@
 
       function resultado() {
         var vTemp = ''
-        vTemp = numerosPositivosNegativos()
+        vTemp = somaElementos()
         document.getElementById('result').innerHTML = vTemp
       }
     </script>
-    <title>Exercício 07</title>
+    <title>Exercício 09</title>
   </head>
 
   <body>
     <div>
-      <h1>Exercício 07</h1>
+      <h1>Exercício 09</h1>
       <form>
         <label for="n1">Entre 01º numero : </label>
         <input type="text" id="n0" name="n0" /><br /><br />
@@ -74,7 +63,7 @@
         <input type="text" id="n9" name="n9" /><br /><br />
       </form>
       <button align="center" onclick="resultado()">
-        CLique aqui para calcular a média
+        CLique aqui para calcular a soma de todos os elementos
       </button>
       <h2 id="result"></h2>
     </div>
