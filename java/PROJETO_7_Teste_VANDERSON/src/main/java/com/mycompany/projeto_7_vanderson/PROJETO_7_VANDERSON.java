@@ -28,7 +28,7 @@ public class PROJETO_7_VANDERSON {
         if (freq>=75){
             if ( ((n1+n2+n3)/3)>=7 ){
                 System.out.println("Aluno aprovado!!");
-                System.out.println("Mediaç = " + ((n1+n2+n3)/3));
+                System.out.println("Media = " + ((n1+n2+n3)/3));
             }
             else{
                 System.out.println("Aluno Reprovado!!");
