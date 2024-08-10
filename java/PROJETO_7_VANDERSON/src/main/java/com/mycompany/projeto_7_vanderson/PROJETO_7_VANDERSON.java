@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class PROJETO_7_VANDERSON {
 
     public static void main(String[] args) {
-
+        
         Scanner ler = new Scanner(System.in);
                
         System.out.println("Entre com o peso(kg): ");

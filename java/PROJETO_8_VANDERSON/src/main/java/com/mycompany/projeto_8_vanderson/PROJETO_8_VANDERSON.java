@@ -12,14 +12,17 @@ import java.util.Scanner;
 public class PROJETO_8_VANDERSON {
 
     public static void main(String[] args) {
+        int ouro = 0;
+        int prata = 0;
+        int bronze = 0;
         Scanner ler = new Scanner(System.in);        
         
         System.out.println("Quantas medalhas de OURO conquistadas : ");
-        int ouro = ler.nextInt();
+        ouro = ler.nextInt();
         System.out.println("Quantas medalhas de PRATA conquistadas : ");
-        int prata = ler.nextInt();
+        prata = ler.nextInt();
         System.out.println("Quantas medalhas de BRONZE conquistadas : ");
-        int bronze = ler.nextInt();
+        bronze = ler.nextInt();
         
         if ((ouro>=10) & (ouro+prata+bronze<30)){
             System.out.println("Otimo desempenho !!!");
