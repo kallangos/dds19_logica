@@ -27,10 +27,12 @@ public class PROJETO_9_VANDERSON {
         }
 
         public void addCarroSemaforo() {
+            Random randCars = new Random();
+            int novosCarros = randCars.nextInt(5);
             if (carrosSemaforo>=10){
-               carrosCongestionados++; 
+               carrosCongestionados=carrosCongestionados + novosCarros; 
             } else {
-               carrosSemaforo++;
+               carrosSemaforo= carrosSemaforo + novosCarros;
             }
         }
         public void passaCarro() {
@@ -45,7 +47,7 @@ public class PROJETO_9_VANDERSON {
             carrosCongestionados++;
         }
         public void addtempoEspera() {
-            tempoEspera=tempoEspera+carrosSemaforo;
+            tempoEspera=tempoEspera+carrosSemaforo+carrosCongestionados;
         }
         public int getCarroSemaforo() {
             return carrosSemaforo;
@@ -56,7 +58,7 @@ public class PROJETO_9_VANDERSON {
         public int getCarrosCongestionados() {
             return carrosCongestionados;
         }    
-        public int gettempoEspera() {
+        public int getTempoEspera() {
             return tempoEspera;
         }    
 
@@ -68,7 +70,7 @@ public class PROJETO_9_VANDERSON {
         
         public semaforo() {
             Random randomico = new Random();
-            this.timer = randomico.nextInt(80);
+            this.timer = randomico.nextInt(79);
             this.state = "vermelho";
         }
 
@@ -150,11 +152,11 @@ public class PROJETO_9_VANDERSON {
         System.out.println("  Semaforo 02 |"+semaforo2.state+"|  " + 
                 movimentoCarros2.getCarroSemaforo() + "  |  " + 
                 movimentoCarros2.getCarrosPassados() + "  |  " + 
-                movimentoCarros2.getCarrosCongestionados() +  "  |  ");
+                movimentoCarros2.getCarrosCongestionados() +  "  |  " +i);
         System.out.println("  Semaforo 03 |"+semaforo3.state+"|  " + 
                 movimentoCarros3.getCarroSemaforo() + "  |  " + 
                 movimentoCarros3.getCarrosPassados() + "  |  " + 
-                movimentoCarros3.getCarrosCongestionados() + "  |  ");
+                movimentoCarros3.getCarrosCongestionados() + "  |  " +i);
 
         }
 
@@ -165,17 +167,17 @@ public class PROJETO_9_VANDERSON {
         System.out.println("----------------------------------------------------");
         System.out.println("  Relatorio Semaforo 01 ");
         System.out.println("  Carros que passaram pelo Semaforo : "+ movimentoCarros1.getCarrosPassados());
-        System.out.println("  Tempo Médio de Espera na fila : "+ movimentoCarros1.gettempoEspera()/movimentoCarros1.getCarrosPassados());
+        System.out.println("  Tempo Médio de Espera na fila : "+ movimentoCarros1.getTempoEspera()/movimentoCarros1.getCarrosPassados());
         System.out.println("  Carros que ficaram congestionados : "+ movimentoCarros1.getCarrosCongestionados());
         System.out.println("----------------------------------------------------");
         System.out.println("  Relatorio Semaforo 02 ");
         System.out.println("  Carros que passaram pelo Semaforo : "+ movimentoCarros2.getCarrosPassados());
-        System.out.println("  Tempo Médio de Espera na fila : "+ movimentoCarros2.gettempoEspera()/movimentoCarros2.getCarrosPassados());
+        System.out.println("  Tempo Médio de Espera na fila : "+ movimentoCarros2.getTempoEspera()/movimentoCarros2.getCarrosPassados());
         System.out.println("  Carros que ficaram congestionados : "+ movimentoCarros2.getCarrosCongestionados());
         System.out.println("----------------------------------------------------");
         System.out.println("  Relatorio Semaforo 03 ");
         System.out.println("  Carros que passaram pelo Semaforo : "+ movimentoCarros3.getCarrosPassados());
-        System.out.println("  Tempo Médio de Espera na fila : "+ movimentoCarros3.gettempoEspera()/movimentoCarros3.getCarrosPassados());
+        System.out.println("  Tempo Médio de Espera na fila : "+ movimentoCarros3.getTempoEspera()/movimentoCarros3.getCarrosPassados());
         System.out.println("  Carros que ficaram congestionados : "+ movimentoCarros3.getCarrosCongestionados());
         System.out.println("----------------------------------------------------");
         
