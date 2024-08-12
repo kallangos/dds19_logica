@@ -1,0 +1,29 @@
+id|idFipe|Valor|Marca|Descrição|categ(pop(0)/pre(1)/lux(2))|
+1|003506-8|424262|1|Ranger Raptor 3.0 V6 Bi-Turbo 4WD Aut|1|
+2|003507-6|502021|1|Mustang GT Performance 5.0 V8|1|
+3|003481-9|241362|1|Bronco Sport Wildtrak 2.0 Tb 16V AWD Aut|1|
+4|003478-9|200774|1|TERRITORY Titanium 1.5 GTDi EcoBo. Aut|2|
+5|003490-9|470357|1|F-150 Platinum 4x4 5.0 V8, 2023|2|
+6|023189-4|168911|2|Sentra Exclu. Int. Premium 2.0 16V Aut|2|
+7|023181-9|128416|2|KICKS Exclusive 1.6 16V Flex Aut|2|
+8|023174-6|114699|2|VERSA Exclusive 1.6 16V Flex Aut|0|
+9|005517-4|224148|3|JETTA GLI 350 TSI 2.0 16V 4p Aut|2|
+22|005526-3|131258|3|Nivus Highline 1.0 200 TSI Flex Aut|0|
+11|005534-4|88515|3|Polo 1.0 TSI Flex 12V 5p|0|
+12|005544-1|136185|3|VIRTUS Exclusive 250TSI 1.4 Flex 16V Aut|1|
+13|029154-4|563940|4|XC 90 T-8 Ultimate 2.0 AWD (Híbrido)|2|
+14|029158-7|430933|4|XC 60 T-8 Ultimate 2.0 AWD (Híbrido)|2|
+15|029162-5|285951|4|XC 40 Recharge Plus (Elétrico)|1|
+16|029160-9|343480|4|C40 Twin Ultimate (Elétrico)|1|
+17|002112-1|164530|5|Corolla ALTIS/A.Premiu. 2.0 Flex 16V Aut|1|
+18|002173-3|101465|5|YARIS XS 1.5 Flex 16V 5p Aut|0|
+19|002169-5|101701|5|YARIS XS Sedan 1.5 Flex 16V 4p Aut|0|
+20|002209-8|330508|5|Camry XLE 2.5 16V Aut. (Híbrido)|2|
+21|002141-5|290908|5|Hilux CD SRX 4x4 2.8 TDI 16V Diesel Aut.|1|
+22|002201-2|150012|5|Corolla Cross XR 2.0 16V Flex Aut.|1|
+23|005483-6|242521|3|AMAROK Highline CD 3.0 4x4 TB Dies. Aut.|1|
+24|005541-7|280196|3|Delivery Express Turbo Diesel (E6)|2|
+25|029167-6|276019|4|EX30 E60 Ultra (Elétrico)|2|
+26|023159-2|229567|2|Frontier XE CD 4x4 2.3 Bi-TB Diesel Aut.|1|
+27|023163-0|220521|2|LEAF Aut. (Elétrico)|1|
+28|003476-2|228727|1|Ranger Storm 3.2 20V 4x4 CD Diesel Aut.|2|
