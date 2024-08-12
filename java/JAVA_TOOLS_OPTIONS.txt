@@ -1,0 +1,6 @@
+Adicione a variavel de ambiente ao windows
+- Abra propriedades de Sistema -> Aba (Avançado) -> [ Variaveis de Ambiente ]
+- Clique em [Novo] dentro do quadro [Variaveis de Sistema]
+
+Nome da variável : JAVA_TOOLS_OPTIONS
+Valor da variável: -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.strerr.encoding=UTF-8  -Dconsole.encoding=UTF-8 -Dnative.encoding=UTF-8 
