@@ -1,2 +1,0 @@
-Favor descompactar todos os carquivos no mesmo diretório,
-e executar o programa no modo console.
