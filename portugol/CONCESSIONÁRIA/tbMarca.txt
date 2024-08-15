@@ -1,0 +1,6 @@
+id|Marca|
+1|Ford|
+2|Nissan|
+3|VolksWagen|
+4|Volvo|
+5|Toyota|
