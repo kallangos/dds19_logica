@@ -33,8 +33,8 @@ public class PROJETO_MEDIA150_VANDERSON {
             System.out.println("---------------------");
            
         }
-        //  %10f  reserva 10 espaços na tela para exibir o valor da variavel.
-        //  %10.2f  reserva 10 espaços na tela para exibir o valor da variavel e limita em duas casa decimais
+        //  %10f  reserva 10 espaços na tela para exibir o valor FLOAT da variavel.
+        //  %10.2f  reserva 10 espaços na tela para exibir o valor FLOAT  da variavel e limita em duas casa decimais
         System.out.println("Media = " + soma/150.0);
         System.out.printf("MediaZ = %10.2f", (soma/150.0));
         // %10.2f
