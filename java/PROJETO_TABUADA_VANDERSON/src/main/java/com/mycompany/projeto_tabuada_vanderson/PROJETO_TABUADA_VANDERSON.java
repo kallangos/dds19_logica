@@ -29,7 +29,5 @@ public class PROJETO_TABUADA_VANDERSON {
             vetor[i-1] = i*n;
             System.out.printf("%2d x %d = %2d \n", i , n , vetor[i-1]);
         }
-        
-        
     }
 }
