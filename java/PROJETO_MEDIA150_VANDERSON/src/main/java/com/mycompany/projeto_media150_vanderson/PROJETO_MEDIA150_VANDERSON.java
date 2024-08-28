@@ -8,6 +8,9 @@ package com.mycompany.projeto_media150_vanderson;
  *
  * @author v.silva
  */
+public static void armanzenaNome(){
+
+}
 public class PROJETO_MEDIA150_VANDERSON {
 
     public static void main(String[] args) {
