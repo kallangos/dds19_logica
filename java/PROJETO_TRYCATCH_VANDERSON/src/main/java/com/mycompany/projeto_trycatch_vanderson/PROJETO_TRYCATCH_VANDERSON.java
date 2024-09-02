@@ -13,7 +13,7 @@ public class PROJETO_TRYCATCH_VANDERSON {
 
     public static void main(String[] args) {
         Scanner ler = new Scanner (System.in);
-        String texto = "";
+        String texto = "a";
         String valorString = "4.2"; // cvalor numeroco como string
         
         try {
