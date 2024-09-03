@@ -20,7 +20,7 @@ public class PROJETO_TRYCATCH_VANDERSON {
             int valorInteiro = Integer.parseInt(valorString);
             System.out.println("Valor Inteiro: " + valorInteiro );
         } catch  (NumberFormatException Erro01){
-            System.out.println(" Erro ao converter : " + Erro01.getMessage());
+            System.out.println(" Erro ao converter : " + Erro01);
         }
         
         
