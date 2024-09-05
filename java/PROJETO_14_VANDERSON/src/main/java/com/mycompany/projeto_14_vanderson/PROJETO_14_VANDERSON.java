@@ -21,7 +21,7 @@ public class PROJETO_14_VANDERSON {
         int matriz25[]= new int[linha*coluna];
         DataInputStream dado;
         int d = 0 ;
-        int somaDiagonal = 0 ;
+        int somaDiagonalPrincipal = 0 ;int somaDiagonaSecundaria = 0 ;
 
         for (int l =0 ; l<=linha-1 ; l++){
 
@@ -54,10 +54,10 @@ public class PROJETO_14_VANDERSON {
         System.out.println("-----------------------------------");
         System.out.println(" Calculando valores na diagonal");
         for (int l =0 ; l<=linha-1 ; l++){
-                somaDiagonal+=matriz5x5[l][d];
+                somaDiagonalPrincipal+=matriz5x5[l][d];
                 d++; 
         }            
-        System.out.println(" Exbindo soma na diagonal = " + somaDiagonal);
+        System.out.println(" Exbindo soma na diagonal = " + somaDiagonalPrincipal);
         
         // transformando matrix em vetor para ordenação.
         d=0;
