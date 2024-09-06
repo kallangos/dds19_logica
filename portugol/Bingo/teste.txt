@@ -1,0 +1,8 @@
+{
+  "Nome": "Ana",
+  "Endereco": [
+                {"Rua": "Rua da boiada"}, 
+                {"Cidade": "Cruzeiro"}
+              ],
+  "Telefones": ["31991188", "39999100"]
+}
