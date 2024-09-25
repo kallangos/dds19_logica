@@ -22,9 +22,10 @@ public class PROJETO_ARQUIVO_TXT_VANDERSON {
         Date date = new Date();
         int valorUsuario = 0 ;
         
-        
+        System.out.printf("-------------------------------------------");
         System.out.print("\nInforme nome do arquivo : ");
         nomeArquivo = sc.nextLine();
+        System.out.printf("-------------------------------------------");
         System.out.print("\nInforme um valor : ");
         valorUsuario = sc.nextInt();
         sc.nextLine();
@@ -33,12 +34,12 @@ public class PROJETO_ARQUIVO_TXT_VANDERSON {
         PrintWriter gravar = new PrintWriter(arquivo);
         
         gravar.printf("Tabuada do " + valorUsuario + " | " + date + "\n");
-        gravar.printf("------------------------");
+        gravar.printf("-------------------------------------------");
         for (int i = 1 ; i<=10 ; i++){
-            gravar.printf("\n" + i + "x" + valorUsuario + " = " + (i*valorUsuario));
+            gravar.printf("\n %2d + %2d = %2d",  i , valorUsuario , (i*valorUsuario));
         }
         
-        gravar.printf("\n------------------------");
+        gravar.printf("\n-------------------------------------------");
         arquivo.close();
     }
 }
