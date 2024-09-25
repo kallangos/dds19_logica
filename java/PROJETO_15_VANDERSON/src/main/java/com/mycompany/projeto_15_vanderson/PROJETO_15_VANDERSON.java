@@ -39,7 +39,7 @@ public class PROJETO_15_VANDERSON {
             FileWriter arquivo = new FileWriter(".\\" + nomeArquivo + "-"+ i +".txt");
             PrintWriter gravar = new PrintWriter(arquivo);
 
-            gravar.printf("Taboada do " + valorUsuario[i]+ " | " + date + "\n");
+            gravar.printf("Tabuada do " + valorUsuario[i]+ " | " + date + "\n");
             gravar.printf("-------------------------------------------");
             
             for (int c = 1 ; c<=10 ; c++){
