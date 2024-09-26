@@ -23,5 +23,7 @@ public class EXERCICIO_01_REVISAO {
         System.out.print("Foneça o segundo numero : ");
         numDois = sc.nextInt();
         
-        System.out.print("Soma de " + numUm + " com " + numDois + " = " + (numUm+numDois));    }
+        System.out.print("Soma de " + numUm + " com " + numDois + " = " + (numUm+numDois));    
+        
+    }
 }
