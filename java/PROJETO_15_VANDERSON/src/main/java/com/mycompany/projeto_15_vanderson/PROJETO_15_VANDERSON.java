@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,15 +23,25 @@ public class PROJETO_15_VANDERSON {
         Scanner sc = new Scanner(System.in);
         String nomeArquivo = "";
         Date date = new Date();
+        String cxDialog = "";
         
-        System.out.printf("-------------------------------------------");
-        System.out.print("\nInforme nome do prefixo do arquivo : ");
-        nomeArquivo = sc.nextLine();
-        
+        nomeArquivo = JOptionPane.showInputDialog(
+                           null
+                         , "Informe nome do prefixo do arquivo : "        // Mensagem
+                         , "Gerador de TXT"               // Titulo
+                         , JOptionPane.PLAIN_MESSAGE
+                    );
         
         for (int i=0 ; i<=valorUsuario.length-1 ; i++){
-            System.out.print("\nInforme o numero na posição ["+(i+1)+"] no vetor : ");
-            valorUsuario[i]=sc.nextInt();
+        cxDialog = JOptionPane.showInputDialog(
+                           null
+                         , "Informe o numero na posição ["+(i+1)+"] no vetor :"        // Mensagem
+                         , "Entrada de numeros"               // Titulo
+                         , JOptionPane.PLAIN_MESSAGE
+                    );
+            if (cxDialog !=null){ 
+                valorUsuario[i] = Integer.parseInt(cxDialog);
+            } 
         }
         
         
@@ -38,17 +49,25 @@ public class PROJETO_15_VANDERSON {
             
             FileWriter arquivo = new FileWriter(".\\" + nomeArquivo + "-"+ i +".txt");
             PrintWriter gravar = new PrintWriter(arquivo);
-
             gravar.printf("Tabuada do " + valorUsuario[i]+ " | " + date + "\n");
             gravar.printf("-------------------------------------------");
             
             for (int c = 1 ; c<=10 ; c++){
                 gravar.printf("\n %2d + %2d = %2d",  c , valorUsuario[i] , (c*valorUsuario[i]));
             }
-            
         gravar.printf("\n-------------------------------------------");
         arquivo.close();
         }
         
+        for (int i=0 ; i<=valorUsuario.length-1 ; i++){
+            JOptionPane.showMessageDialog(
+                           null
+                         , "Arquivo .\\" + nomeArquivo + "-"+ i + ".txt Gerado com Sucesso!" // Mensagem
+                         , "Status de Gravação"               // Titulo
+                         , JOptionPane.PLAIN_MESSAGE
+                    );
+        }
+        
+                
     }
 }
