@@ -6,6 +6,7 @@ package com.mycompany.exercicio_04_revisao;
 
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +21,9 @@ public class EXERCICIO_04_REVISAO {
     public static void main(String[] args) throws IOException{
         Scanner sc = new Scanner(System.in);
         double numUm, numDois, numTres = 0;
+        
+        String nome = JOptionPane.showInputDialog(null, "teste");
+        String nome = JOptionPane.MessagesDialog(null, "teste");
         
         System.out.printf("-------------------------------------------\n");
         System.out.print("Entre com o primeiro numero real: ");
