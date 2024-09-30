@@ -1,7 +1,8 @@
 # Primeiro modulo DDS19-2-19
 Primeiros passos Java :
 
-16. Uma empresa precisa realizar uma estatística do salário de seus funcionários. Para isto precisa de um
+[ 16 ]
+	Uma empresa precisa realizar uma estatística do salário de seus funcionários. Para isto precisa de um
 programa que leia uma lista contendo os salários dos funcionários da empresa, e imprima quantos
 funcionários ganham salário acima da média. Sabe-se que a empresa possui 50 funcionários.
 
