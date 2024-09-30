@@ -17,7 +17,7 @@ funcionários ganham salário acima da média. Sabe-se que a empresa possui 50 f
 funcionários possui a empresa e reliza o restante do processo.
  */
 public class EXERCICIO_16_REVISAO {
-    public static int lerInteriro(){
+    public static int lerInteiro(){
         Scanner ler = new Scanner(System.in);
         int resultado = 0;
             try {
@@ -39,7 +39,7 @@ public class EXERCICIO_16_REVISAO {
 
         System.out.println("------------------------------------------------");
         System.out.print("Quantos funcionarios existem na empresa? : ");
-        listaMax = lerInteriro();
+        listaMax = lerInteiro();
         float salarioAleatorio[] = new float[listaMax];
         
         // Gerando lista de salarios Aleatoreamente.
