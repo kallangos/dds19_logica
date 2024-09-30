@@ -15,14 +15,8 @@ public class EXERCICIO_14_REVISAO {
     public static String lerString(){
         Scanner ler = new Scanner(System.in);
         String resultado = "";
-            try {
                 resultado=ler.nextLine();
-            } catch (InputMismatchException Erro01) {
-                System.out.println("INVALIDO!");
-                System.out.println("Nao foi reconhecido o texto");
-                System.out.println("Erro: " + Erro01);
-                System.exit(0);
-            }
+
         return resultado ;
     }    
     public static float lerSalario(){
@@ -30,7 +24,7 @@ public class EXERCICIO_14_REVISAO {
         float resultado = 0;
             try {
                 resultado=ler.nextFloat();
-            } catch (InputMismatchException Erro01) {
+            } catch (NumberFormatException Erro01) {
                 System.out.println("Opção INVALIDA!");
                 System.out.println("Deve ser um numero FLOAT");
                 System.out.println("ou INTERIRO");

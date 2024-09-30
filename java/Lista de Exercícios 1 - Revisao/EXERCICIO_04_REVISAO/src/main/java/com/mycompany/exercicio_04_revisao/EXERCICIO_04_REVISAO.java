@@ -5,6 +5,7 @@
 package com.mycompany.exercicio_04_revisao;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -17,25 +18,72 @@ import javax.swing.JOptionPane;
    * 
  */
 public class EXERCICIO_04_REVISAO {
+    public static float lerLadoTriangulo(int i){
+        float resultado = 0;
+        String entraDado = "";
+            try {
+                entraDado = JOptionPane.showInputDialog(
+                null,
+                "Entre com o "+ (i+1) + "º lado do triangulo: ",
+                "Identificar lados de um triangulo",
+                JOptionPane.INFORMATION_MESSAGE
+                );
+                resultado = Float.parseFloat(entraDado);
+                
+            } catch (NumberFormatException Erro01) {
+                System.out.println("Opção INVALIDA!");
+                System.out.println("Deve ser um numero FLOAT");
+                System.out.println("ou INTERIRO");
+                System.out.println("Erro: " + Erro01);
+                System.exit(0);
+            }
+        return resultado ;
+    }
 
     public static void main(String[] args) throws IOException{
-        Scanner sc = new Scanner(System.in);
-        double numUm, numDois, numTres = 0;
+        float[] lados = new float[3];
+        float somaLadoMenor = 0;
+        String entraDado = "";
         
-        String nome = JOptionPane.showInputDialog(null, "teste");
-        String nome = JOptionPane.MessagesDialog(null, "teste");
-        
-        System.out.printf("-------------------------------------------\n");
-        System.out.print("Entre com o primeiro numero real: ");
-        numUm = sc.nextDouble();
-        
-        System.out.print("Entre com o segundo numero real: ");
-        numDois = sc.nextDouble();
-        
-        if(numUm != Math.floor(numUm) && numDois != Math.floor(numDois)){
-            
+        for (int i=0 ; i<=2 ; i++){
+            lados[i] = lerLadoTriangulo(i);
         }
+        
 
+        if ( lados[0] < ( lados[1]+lados[2] ) && ( lados[1] < ( lados[0]+lados[2] )) && ( lados[2] < ( lados[0]+lados[1] ))){
+            if (somaLadoMenor>(somaLadoMenor-(lados[0]+lados[1]+lados[2]))){
+                if ( lados[0]==lados[1] && lados[1]==lados[2] ){
+                    JOptionPane.showMessageDialog(
+                    null,
+                    "Seu Triangulo é um equilátero",
+                    "Identificando um triangulo",
+                    JOptionPane.INFORMATION_MESSAGE
+                    );
+                } else if (lados[0]==lados[1] || lados[1]==lados[2] || lados[0]==lados[2]){
+                    JOptionPane.showMessageDialog(
+                    null,
+                    "Seu Triangulo é um isóceles",
+                    "Identificando um triangulo",
+                    JOptionPane.INFORMATION_MESSAGE
+                    );
+                }
+                if ((lados[0]!=lados[1])&&(lados[1]!=lados[2])&&(lados[0]!=lados[2])){
+                    JOptionPane.showMessageDialog(
+                    null,
+                    "Seu Triangulo é um escaleno",
+                    "Identificando um triangulo",
+                    JOptionPane.INFORMATION_MESSAGE
+                    );
+                }
+            }   
+        } else {
+                JOptionPane.showMessageDialog(
+                null,
+                "Os lados inseridos nao formam um triangulo",
+                "Identificar lados de um triangulo",
+                JOptionPane.INFORMATION_MESSAGE
+                );
+        }
 
     }
 }
