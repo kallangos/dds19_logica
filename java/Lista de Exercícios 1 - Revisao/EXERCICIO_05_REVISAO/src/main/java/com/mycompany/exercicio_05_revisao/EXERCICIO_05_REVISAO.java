@@ -56,12 +56,6 @@ public class EXERCICIO_05_REVISAO {
                     , "Erro: " + Erro01               // Titulo
                     , JOptionPane.PLAIN_MESSAGE
                 );
-                /*
-                System.out.println("Opção INVALIDA!");
-                System.out.println("Deve ser um numero FLOAT");
-                System.out.println("ou INTERIRO");
-                System.out.println("Erro: " + Erro01);
-                */
                 System.exit(0);
             }
         return resultado ;
