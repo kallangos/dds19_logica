@@ -52,7 +52,6 @@ public class EXERCICIO_07_REVISAO {
                     menorVal = x;
                 }
                 ++contVal;
-                System.out.println("-------------2> "+contVal);
                 somaVal=somaVal+x;
                 if (x>maiorVal){
                     maiorVal = x;
@@ -78,8 +77,6 @@ public class EXERCICIO_07_REVISAO {
             System.out.println("-------------");
             System.out.println("| Saindo... |");
             System.out.println("-------------");
-            System.out.println("-------------C> "+contVal);
-            System.out.println("-------------M> "+menorVal);
             System.exit(0);
             }
         }
