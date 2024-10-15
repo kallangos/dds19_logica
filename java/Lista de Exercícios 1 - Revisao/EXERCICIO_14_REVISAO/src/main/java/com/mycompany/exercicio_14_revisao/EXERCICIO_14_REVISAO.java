@@ -73,7 +73,7 @@ public class EXERCICIO_14_REVISAO {
 
         }
         System.out.printf("-----------------------------------------------\n");
-        System.out.printf("SOMA DOS SALARIOs REAJUSTADOs : R$ %,10.2f \n",somaSalariosAtuais );
+        System.out.printf("SOMA DOS SALARIOs ATUAIs : R$ %,10.2f \n",somaSalariosAtuais );
         System.out.printf("SOMA DOS SALARIOs REAJUSTADOs : R$ %,10.2f \n",somaSalarioReagustados );
         System.out.printf("Saindo...\n");
 
