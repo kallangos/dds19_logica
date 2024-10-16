@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-
 import javax.swing.JOptionPane;
 import java.io.IOException;
 
@@ -10,7 +9,7 @@ import java.io.IOException;
  *
  * @author Thor
  */
-public class EXERCICIO_08_REVISAO {
+public class EXERCICIO_15_REVISAO {
     public static void exibeMensagem(String frase, String titulo){
         JOptionPane.showMessageDialog(
             null
@@ -43,39 +42,16 @@ public class EXERCICIO_08_REVISAO {
     return resultado ;
     }
     public static void main(String[] args) throws IOException{
-        int x = 1 , maxVal = 0 , minVal = 0;
-        int contVal = 0, somaVal = 0 , xTemp = 0;
+        int anoNasc = 0 , anoAtual = 0 , idade = 0;
         
+        anoNasc = recebeNumero("Entre o ano de seu nascimento : ", "Age Discovery");  
+        anoAtual = recebeNumero("Entre o ano em que estamos : ", "Age Discovery");  
         
-        maxVal = recebeNumero("Entre com um numero inteiro (Max): ", "Senai Looper III");    
-        minVal = recebeNumero("Entre com um numero inteiro (Min): ", "Senai Looper III"); 
-        if (minVal>maxVal){
-            xTemp =maxVal;
-            maxVal=minVal;
-            minVal=xTemp;
-        }
-        
-        while (x!=0){
-          
-            x = recebeNumero("Entre com um numero inteiro (X): ", "Senai Looper III");  
-
-            if (x>=minVal & x<=maxVal){
-                ++contVal;
-                somaVal=+x;                
-            } else if (x!=0){
-                exibeMensagem(
-                      "Valor fora do intervalo [" + maxVal + "," + minVal +"] ignorado na totalizaçao",
-                      "Senai Looper III"
-                );                
-            }
-        }
+        idade = anoAtual - anoNasc;
         
         exibeMensagem(
-              "Valor (MAX) : " + maxVal +"\n"+
-              "Valor (Min) : " + minVal +"\n"+
-              "Quantos Valores informados : " + contVal +"\n"+
-              "Soma dos valores informados : " + somaVal +"\n",
-              "Senai Looper III");
-        
+          "Neste ano completa " + idade +" anos.\n",
+          "Age Discovery"
+        );
     }
 }
