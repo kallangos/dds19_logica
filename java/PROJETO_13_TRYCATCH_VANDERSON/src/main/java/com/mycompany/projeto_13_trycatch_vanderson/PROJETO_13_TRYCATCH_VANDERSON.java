@@ -47,7 +47,7 @@ public class PROJETO_13_TRYCATCH_VANDERSON {
         return resultado ;
     }
     
-    public static int lerInteriro(){
+    public static int lerInteiro(){
         Scanner ler = new Scanner(System.in);
         int resultado = 0;
             try {
@@ -69,13 +69,13 @@ public class PROJETO_13_TRYCATCH_VANDERSON {
         int resultados[] = new int[1];
         
         System.out.print(" Quantos itens deseja na lista? : ");
-        vertorSize = lerInteriro();
+        vertorSize = lerInteiro();
         int vetorTeste[] = new int[vertorSize];
         
         System.out.println(" ----------------------------------------");
         for (int i = 0 ; i<vetorTeste.length; i++){
             System.out.print(" Entre com o iten [" + (i+1) +"] da lista : ");
-            vetorTeste[i]=lerInteriro();
+            vetorTeste[i]=lerInteiro();
         }
         
         System.out.println("");
@@ -85,7 +85,7 @@ public class PROJETO_13_TRYCATCH_VANDERSON {
         System.out.println("  (1) Adição (2) Subtração ");
         System.out.println("  (3) Multiplicação (4) Divisão ");
         System.out.print(" Qual sua opção? : ");
-        opcao = lerInteriro();
+        opcao = lerInteiro();
 
         // Listando itens no vetor
         System.out.println("");
@@ -97,9 +97,9 @@ public class PROJETO_13_TRYCATCH_VANDERSON {
         
         System.out.println(" ----------------------------------------");
         System.out.print(" Indique uma primeira posiçao no vertor que deseja processar :");
-        calcA = lerInteriro()-1;
+        calcA = lerInteiro()-1;
         System.out.print(" Indique uma segunda posiçao no vertor que deseja processar :");
-        calcB = lerInteriro()-1;
+        calcB = lerInteiro()-1;
 
         try {
             int validarIndice = 0 ;

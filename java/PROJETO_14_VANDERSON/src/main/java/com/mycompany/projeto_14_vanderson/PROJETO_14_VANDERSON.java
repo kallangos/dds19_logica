@@ -31,11 +31,6 @@ public class PROJETO_14_VANDERSON {
         int somaLinhas[]= new int[linha];
         int somaColunas[]= new int[coluna];
         int somaDiagonalPrincipal = 0 ;int somaDiagonaSecundaria = 0 ;
-<<<<<<< HEAD
-        Random nAleatorio = new Random();
-=======
-        
->>>>>>> b0ad37286db5f04782d1a09da7953f826b9128d5
         
 
         for (int l =0 ; l<=linha-1 ; l++){

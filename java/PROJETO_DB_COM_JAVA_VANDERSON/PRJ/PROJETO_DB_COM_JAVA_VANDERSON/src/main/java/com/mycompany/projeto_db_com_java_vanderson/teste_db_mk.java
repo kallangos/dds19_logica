@@ -4,6 +4,13 @@
  */
 package com.mycompany.projeto_db_com_java_vanderson;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author v.silva
@@ -34,8 +41,14 @@ public class teste_db_mk extends javax.swing.JFrame {
         jLabel_nome = new javax.swing.JLabel();
         jTextField_nome = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,12 +66,49 @@ public class teste_db_mk extends javax.swing.JFrame {
         jPanel1.add(jTextField_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 180, -1));
 
         jButton1.setText("TESTE DB");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 260, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 260, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -3, 410, 310));
+        delete.setText("EXCLUIR");
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 260, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -3, 460, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        // TODO add your handling code here:
+        Connection conexao = null;
+        PreparedStatement statement = null;
+        
+        String url = "jdbc:mysql://localhost:3306/locadora";
+        String usuario = "root";
+        String senha = "";
+        
+ //       conexao = DriverManager.getConnection(url,usuario,senha);
+//        String sql = "UPDATE clientes ("
+        
+        
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        String url = "jdbc:mysql://localhost:3306/locadora";
+        String usuario = "root";
+        String senha = "";
+        
+   //     try {
+    //        conexao = DriverManager.getConnection(url,usuario,senha);
+     //   }
+   //     conexao = DriverManager.getConnection(url,usuario,senha);
+   //     String sql = "UPDATE clientes ("
+        
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -96,6 +146,7 @@ public class teste_db_mk extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton delete;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel_cpf;
     private javax.swing.JLabel jLabel_id;
