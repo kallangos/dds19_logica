@@ -45,10 +45,14 @@ public class EXERCICIO_09_REVISAO {
     public static void main(String[] args) throws IOException{
         int x = 1 , maxVal = 0 , minVal = 0;
         int contVal = 0, somaVal = 0 , xTemp = 0;
+        String todosN = " ";
+        int max = 20;
+        //int[] valoresValidos ;
+        int[] valoresValidos = new int[max];
         
         
-        maxVal = recebeNumero("Entre com um numero inteiro (Max): ", "Senai Looper III");    
-        minVal = recebeNumero("Entre com um numero inteiro (Min): ", "Senai Looper III"); 
+        maxVal = recebeNumero("Entre com um numero inteiro (Max): ", "Senai Looper IV");    
+        minVal = recebeNumero("Entre com um numero inteiro (Min): ", "Senai Looper IV"); 
         if (minVal>maxVal){
             xTemp =maxVal;
             maxVal=minVal;
@@ -57,15 +61,16 @@ public class EXERCICIO_09_REVISAO {
         
         while (x!=0){
           
-            x = recebeNumero("Entre com um numero inteiro (X): ", "Senai Looper III");  
+            x = recebeNumero("Entre com um numero inteiro (X): ", "Senai Looper IV");  
 
             if (x>=minVal & x<=maxVal){
                 ++contVal;
-                somaVal=+x;                
+                somaVal=somaVal+x; 
+                valoresValidos[contVal-1]=x;
             } else if (x!=0){
                 exibeMensagem(
-                      "Valor fora do intervalo [" + maxVal + "," + minVal +"] ignorado na totalizaçao",
-                      "Senai Looper III"
+                      "Valor fora do intervalo [ " + maxVal + " , " + minVal +" ] ignorado na totalizaçao",
+                      "Senai Looper IV"
                 );                
             }
         }
@@ -73,8 +78,24 @@ public class EXERCICIO_09_REVISAO {
         exibeMensagem(
               "Valor (MAX) : " + maxVal +"\n"+
               "Valor (Min) : " + minVal +"\n"+
-              "Quantos Valores informados validos: " + contVal +"\n"+
+              "Quantos Valores informados validos : " + contVal +"\n"+
               "Soma dos valores informados validos: " + somaVal +"\n",
-              "Senai Looper III");
+              "Senai Looper IV");
+        
+               
+        for (int i = 1 ; i<=contVal ; i++){
+            todosN = todosN + " " + Integer.toString(valoresValidos[i-1]);
+            if ((i%20)==0){
+                todosN = todosN + "\n ";
+                System.out.println(i%20);
+            }
+        }
+        todosN = todosN + 
+                "\n\n Valores Somados : " + somaVal+"\n\n" + 
+                " Teremos o problema de estouro do vetor\n"
+                + " caso tenhamos uma quantidade de números\n"
+                + " validados que exceda o tamanho do vetor"
+                ;
+        exibeMensagem(todosN, "Exibindo todos os numeros valodos no vertor");
     }
 }
