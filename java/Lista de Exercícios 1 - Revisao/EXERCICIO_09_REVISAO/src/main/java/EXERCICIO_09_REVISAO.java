@@ -1,16 +1,16 @@
+
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
-
-import javax.swing.JOptionPane;
-import java.io.IOException;
 
 /**
  *
  * @author Thor
  */
-public class EXERCICIO_08_REVISAO {
+public class EXERCICIO_09_REVISAO {
     public static void exibeMensagem(String frase, String titulo){
         JOptionPane.showMessageDialog(
             null
@@ -76,6 +76,5 @@ public class EXERCICIO_08_REVISAO {
               "Quantos Valores informados validos: " + contVal +"\n"+
               "Soma dos valores informados validos: " + somaVal +"\n",
               "Senai Looper III");
-        
     }
 }
