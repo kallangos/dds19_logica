@@ -92,10 +92,10 @@ public class EXERCICIO_09_REVISAO {
         }
         todosN = todosN + 
                 "\n\n Valores Somados : " + somaVal+"\n\n" + 
-                " Teremos o problema de estouro do vetor\n"
+                " Teremos o problema de estouro do vetor,\n"
                 + " caso tenhamos uma quantidade de números\n"
-                + " validados que exceda o tamanho do vetor"
+                + " validados que exceda o tamanho do vetor."
                 ;
-        exibeMensagem(todosN, "Exibindo todos os numeros valodos no vertor");
+        exibeMensagem(todosN, "Exibindo os números valodos no vetor");
     }
 }
