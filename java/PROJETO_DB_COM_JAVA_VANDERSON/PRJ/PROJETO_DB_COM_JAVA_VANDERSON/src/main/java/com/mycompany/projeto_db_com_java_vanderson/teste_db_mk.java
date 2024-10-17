@@ -7,6 +7,7 @@ package com.mycompany.projeto_db_com_java_vanderson;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -83,6 +84,8 @@ public class teste_db_mk extends javax.swing.JFrame {
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
+        
+        try {
         Connection conexao = null;
         PreparedStatement statement = null;
         
@@ -90,10 +93,27 @@ public class teste_db_mk extends javax.swing.JFrame {
         String usuario = "root";
         String senha = "";
         
- //       conexao = DriverManager.getConnection(url,usuario,senha);
-//        String sql = "UPDATE clientes ("
+        conexao = DriverManager.getConnection(url,usuario,senha);
+        String sql = "SELECT filme_titulo FROM filmes WHERE filme_id = ?";
         
+        statement = conexao.prepareStatement(sql);
+        statement.setString(1, jTextField_id.getText());
         
+        ResultSet resultSet = statement.executeQuery();
+        
+        if (resultSet.next()){
+            String filme_titulo = resultSet.getString("filme_titulo");
+            jTextField_nome.setText(filme_titulo);
+        } else {
+            jTextField_nome.setText("nao encontrado");
+        }
+        
+        resultSet.close();
+        statement.close();
+        conexao.close();
+        } catch (SQLException ex){
+            System.out.println(ex.getMessage());
+        }
     }//GEN-LAST:event_deleteActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

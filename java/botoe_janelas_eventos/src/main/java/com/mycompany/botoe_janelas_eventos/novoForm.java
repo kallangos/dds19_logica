@@ -136,7 +136,7 @@ public class novoForm extends javax.swing.JFrame {
         String selecionado = (String) jComboBox_1.getSelectedItem();
         jLabel_combo_selected.setText(selecionado);
         jLabel_check_box.setText("Checkbox Selecionado : " + Boolean.toString(jCheckBox.isSelected()));
-        jLabel_check_box.setText("Checkbox Selecionado : " + Boolean.toString(jCheckBox.isSelected()));
+        jLabel_RadioButton1.setText("Checkbox Selecionado : " + Boolean.toString(jRadioButton.isSelected()));
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
