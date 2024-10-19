@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,6 +23,38 @@ public class CRUDFORM extends javax.swing.JFrame {
     public CRUDFORM() {
         initComponents();
         jlbl_infor.setVisible(false);
+    }
+    public void listagemCompleta(String sql) {
+        try
+            {
+             Connection con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost/escolasenai2", "root", "");
+             PreparedStatement banco = (PreparedStatement)con.prepareStatement(sql);
+             banco.execute(); // cria o vetor
+
+             ResultSet resultado = banco.executeQuery(sql);
+
+             DefaultTableModel model =(DefaultTableModel) jtbl_aluno.getModel();
+             model.setNumRows(0);
+
+             while(resultado.next())
+             {
+                 model.addRow(new Object[] 
+                 { 
+                    resultado.getString("aluno_ra"),
+                    resultado.getString("ALUNO_NOME"),
+                    resultado.getString("aluno_dt_nasc"),
+                    resultado.getString("aluno_cpf"),
+                    resultado.getString("aluno_sexo")
+
+                 }); 
+            } 
+             banco.close();
+             con.close();
+            }
+           catch (SQLException ex)
+           {
+              System.out.println("o erro foi " +ex);
+              }
     }
 
     /**
@@ -38,11 +71,11 @@ public class CRUDFORM extends javax.swing.JFrame {
         jbtn_atualizar = new javax.swing.JButton();
         jbtn_excluir = new javax.swing.JButton();
         jbtn_encontrar = new javax.swing.JButton();
-        jtxtf_RA_ALUN = new javax.swing.JTextField();
-        jtxtf_NOME_ALU = new javax.swing.JTextField();
-        jtxtf_DT_NASC_ALU = new javax.swing.JTextField();
-        jtxtf_CPF_ALU = new javax.swing.JTextField();
-        jtxtf_SEXO_ALU = new javax.swing.JTextField();
+        jtxtf_RA_ALUNO = new javax.swing.JTextField();
+        jtxtf_NOME_ALUNO = new javax.swing.JTextField();
+        jtxtf_DT_NASC_ALUNO = new javax.swing.JTextField();
+        jtxtf_CPF_ALUNO = new javax.swing.JTextField();
+        jcmb_SEXO_ALUNO = new javax.swing.JComboBox<>();
         jlbl_RA = new javax.swing.JLabel();
         jlbl_NomeAluno = new javax.swing.JLabel();
         jlbl_dt_nasc = new javax.swing.JLabel();
@@ -50,12 +83,15 @@ public class CRUDFORM extends javax.swing.JFrame {
         jlbl_sexo = new javax.swing.JLabel();
         jbtn_sair = new javax.swing.JButton();
         jlbl_infor = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtbl_aluno = new javax.swing.JTable();
+        jbtn_listagem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(null);
-        setMinimumSize(new java.awt.Dimension(560, 370));
+        setMinimumSize(new java.awt.Dimension(1066, 344));
         setName("CRUD"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(560, 370));
+        setPreferredSize(new java.awt.Dimension(1066, 344));
         setResizable(false);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
@@ -67,13 +103,23 @@ public class CRUDFORM extends javax.swing.JFrame {
                 jbtn_InserirActionPerformed(evt);
             }
         });
-        jpnl_home.add(jbtn_Inserir, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 240, -1, -1));
+        jpnl_home.add(jbtn_Inserir, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 220, -1, -1));
 
         jbtn_atualizar.setText("atualizar");
-        jpnl_home.add(jbtn_atualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 240, -1, -1));
+        jbtn_atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_atualizarActionPerformed(evt);
+            }
+        });
+        jpnl_home.add(jbtn_atualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 220, -1, -1));
 
         jbtn_excluir.setText("excluir");
-        jpnl_home.add(jbtn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 240, -1, -1));
+        jbtn_excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_excluirActionPerformed(evt);
+            }
+        });
+        jpnl_home.add(jbtn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 220, -1, -1));
 
         jbtn_encontrar.setText("encontrar");
         jbtn_encontrar.addActionListener(new java.awt.event.ActionListener() {
@@ -81,15 +127,17 @@ public class CRUDFORM extends javax.swing.JFrame {
                 jbtn_encontrarActionPerformed(evt);
             }
         });
-        jpnl_home.add(jbtn_encontrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
+        jpnl_home.add(jbtn_encontrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 56, -1, -1));
 
-        jtxtf_RA_ALUN.setEnabled(false);
-        jtxtf_RA_ALUN.setPreferredSize(new java.awt.Dimension(70, 22));
-        jpnl_home.add(jtxtf_RA_ALUN, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 19, 70, -1));
-        jpnl_home.add(jtxtf_NOME_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 59, 232, -1));
-        jpnl_home.add(jtxtf_DT_NASC_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 141, 122, -1));
-        jpnl_home.add(jtxtf_CPF_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 101, 108, -1));
-        jpnl_home.add(jtxtf_SEXO_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 181, 122, -1));
+        jtxtf_RA_ALUNO.setEnabled(false);
+        jtxtf_RA_ALUNO.setPreferredSize(new java.awt.Dimension(70, 22));
+        jpnl_home.add(jtxtf_RA_ALUNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 19, 40, -1));
+        jpnl_home.add(jtxtf_NOME_ALUNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 59, 232, -1));
+        jpnl_home.add(jtxtf_DT_NASC_ALUNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 141, 80, -1));
+        jpnl_home.add(jtxtf_CPF_ALUNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 101, 108, -1));
+
+        jcmb_SEXO_ALUNO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        jpnl_home.add(jcmb_SEXO_ALUNO, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 180, 80, -1));
 
         jlbl_RA.setText("Registro Academico :");
         jpnl_home.add(jlbl_RA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
@@ -112,13 +160,61 @@ public class CRUDFORM extends javax.swing.JFrame {
                 jbtn_sairActionPerformed(evt);
             }
         });
-        jpnl_home.add(jbtn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 281, 254, -1));
+        jpnl_home.add(jbtn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 260, 254, -1));
 
         jlbl_infor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jlbl_infor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbl_infor.setText("TESTE");
+        jlbl_infor.setText("Status");
         jlbl_infor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jpnl_home.add(jlbl_infor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 210, 102));
+
+        jtbl_aluno.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Registro", "Nome", "Data", "CPF", "Sexo"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jtbl_aluno);
+        if (jtbl_aluno.getColumnModel().getColumnCount() > 0) {
+            jtbl_aluno.getColumnModel().getColumn(0).setPreferredWidth(70);
+            jtbl_aluno.getColumnModel().getColumn(1).setPreferredWidth(310);
+            jtbl_aluno.getColumnModel().getColumn(2).setResizable(false);
+            jtbl_aluno.getColumnModel().getColumn(2).setPreferredWidth(106);
+            jtbl_aluno.getColumnModel().getColumn(3).setResizable(false);
+            jtbl_aluno.getColumnModel().getColumn(3).setPreferredWidth(130);
+            jtbl_aluno.getColumnModel().getColumn(4).setResizable(false);
+            jtbl_aluno.getColumnModel().getColumn(4).setPreferredWidth(50);
+        }
+
+        jpnl_home.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, 220));
+
+        jbtn_listagem.setText("Listagem de alunos");
+        jbtn_listagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_listagemActionPerformed(evt);
+            }
+        });
+        jpnl_home.add(jbtn_listagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 450, -1));
 
         getContentPane().add(jpnl_home);
 
@@ -127,6 +223,57 @@ public class CRUDFORM extends javax.swing.JFrame {
 
     private void jbtn_InserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_InserirActionPerformed
         // TODO add your handling code here:
+        Connection conexao = null;
+        PreparedStatement statement = null;
+       
+        String url = "jdbc:mysql://localhost:3306/escolasenai2";
+        String usuario = "root";
+        String senha = "";
+        
+       try {
+            conexao = DriverManager.getConnection(url, usuario, senha);
+           
+            String sql = "INSERT INTO aluno (aluno_nome, aluno_cpf, aluno_dt_nasc, aluno_sexo) VALUES (? , ?, ?, ?)";
+           
+            statement = conexao.prepareStatement(sql);
+            
+             
+            statement.setString(1, jtxtf_NOME_ALUNO.getText());
+            statement.setString(2, jtxtf_CPF_ALUNO.getText());
+            statement.setString(3, jtxtf_DT_NASC_ALUNO.getText());
+            statement.setString(4, (String) jcmb_SEXO_ALUNO.getSelectedItem());
+           
+            //statement.execute();
+           
+            int linhasAfetadas = statement.executeUpdate();
+           
+            if (linhasAfetadas > 0) {
+               
+                jlbl_infor.setVisible(true);
+                jlbl_infor.setText("Inserido com sucesso");
+                System.out.println("Dados inseridos com sucesso!");
+                this.listagemCompleta("SELECT * FROM aluno ORDER BY aluno_nome ASC");
+                
+            } else {
+                jlbl_infor.setVisible(true);
+                jlbl_infor.setText("Nenhum dado inserido.");
+                System.out.println("Nenhum dado inserido.");
+            }
+         } catch (SQLException e) {
+            System.out.println("Erro ao inserir dados: " + e.getMessage());
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Erro ao fechar conexão: " + e.getMessage());
+            }
+       }        
+        
     }//GEN-LAST:event_jbtn_InserirActionPerformed
 
     private void jbtn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_sairActionPerformed
@@ -140,29 +287,28 @@ public class CRUDFORM extends javax.swing.JFrame {
         Connection conexao = null;
         PreparedStatement statement = null;
         
-        String url = "jdbc:mysql://localhost:3306/escolasenai";
+        String url = "jdbc:mysql://localhost:3306/escolasenai2";
         String usuario = "root";
         String senha = "";
         
         conexao = DriverManager.getConnection(url,usuario,senha);
-        String sql = "SELECT * FROM tb_aluno WHERE nome_alu = ?";
-//        String sql = "SELECT * FROM tb_aluno GROU BY nome_alu HAVING nome_alu= ?";
+        String sql = "SELECT * FROM aluno WHERE aluno_nome = ?";
         statement = conexao.prepareStatement(sql);
-        statement.setString(1, jtxtf_NOME_ALU.getText());
+        statement.setString(1, jtxtf_NOME_ALUNO.getText());
         
         ResultSet resultSet = statement.executeQuery();
         
         if (resultSet.next()){
-            String RA_ALUN = resultSet.getString("RA_ALUN");
-            jtxtf_RA_ALUN.setText(RA_ALUN);
-            String NOME_ALU = resultSet.getString("NOME_ALU");
-            jtxtf_NOME_ALU.setText(NOME_ALU);
-            String CPF_ALU = resultSet.getString("CPF_ALU");
-            jtxtf_CPF_ALU.setText(CPF_ALU);
-            String DT_NASC_ALU = resultSet.getString("DT_NASC_ALU");
-            jtxtf_DT_NASC_ALU.setText(DT_NASC_ALU);
-            String SEXO_ALU = resultSet.getString("SEXO_ALU");
-            jtxtf_SEXO_ALU.setText(SEXO_ALU);
+            String RA_ALUN = resultSet.getString("ALUNO_RA");
+            jtxtf_RA_ALUNO.setText(RA_ALUN);
+            String NOME_ALU = resultSet.getString("ALUNO_NOME");
+            jtxtf_NOME_ALUNO.setText(NOME_ALU);
+            String CPF_ALU = resultSet.getString("ALUNO_CPF");
+            jtxtf_CPF_ALUNO.setText(CPF_ALU);
+            String DT_NASC_ALU = resultSet.getString("ALUNO_DT_NASC");
+            jtxtf_DT_NASC_ALUNO.setText(DT_NASC_ALU);
+            String SEXO_ALU = resultSet.getString("ALUNO_SEXO");
+            jcmb_SEXO_ALUNO.setSelectedItem(SEXO_ALU);
             jlbl_infor.setText("OK");
         } else {
             jlbl_infor.setText("Não Encontrado");
@@ -178,6 +324,112 @@ public class CRUDFORM extends javax.swing.JFrame {
             jlbl_infor.setVisible(true);
         }
     }//GEN-LAST:event_jbtn_encontrarActionPerformed
+
+    private void jbtn_atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_atualizarActionPerformed
+        // TODO add your handling code here:
+        Connection conexao = null;
+        PreparedStatement statement = null;
+       
+        String url = "jdbc:mysql://localhost:3306/escolasenai2";
+        String usuario = "root";
+        String senha = "";
+        
+       try {
+            conexao = DriverManager.getConnection(url, usuario, senha);
+         
+            String sql = "UPDATE aluno SET aluno_nome = ? , aluno_cpf = ?, aluno_dt_nasc = ?, aluno_sexo = ? where aluno_ra= ?";
+            
+            statement = conexao.prepareStatement(sql);
+            
+            statement.setString(1, jtxtf_NOME_ALUNO.getText());
+            statement.setString(2, jtxtf_CPF_ALUNO.getText());
+            statement.setString(3, jtxtf_DT_NASC_ALUNO.getText());
+            statement.setString(4, (String) jcmb_SEXO_ALUNO.getSelectedItem());
+            statement.setString(5, jtxtf_RA_ALUNO.getText());
+
+            //statement.setString(1, jTextPane1_ID.getText());
+/*
+            statement.setString(1, jTextPane8.getText()); // NOME
+            statement.setString(2, jTextPane9.getText()); // CPF
+            statement.setString(3, jTextPane7.getText()); // ID
+*/
+           
+            int linhasAfetadas = statement.executeUpdate();
+           
+            if (linhasAfetadas > 0) {
+                jlbl_infor.setText("Dados atualizados");
+                jlbl_infor.setVisible(true);
+                System.out.println("Dados atualizados com sucesso!");
+                this.listagemCompleta("SELECT * FROM aluno ORDER BY aluno_nome ASC");
+            } else {
+                jlbl_infor.setText("Nenhuma atualização");
+                jlbl_infor.setVisible(true);
+                System.out.println("Nenhum dado atualizado.");
+            }
+         } catch (SQLException e) {
+            System.out.println("Erro ao atualizar dados: " + e.getMessage());
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Erro ao fechar conexão: " + e.getMessage());
+            }} 
+       
+    }//GEN-LAST:event_jbtn_atualizarActionPerformed
+
+    private void jbtn_excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_excluirActionPerformed
+        // TODO add your handling code here:
+        Connection conexao = null;
+        PreparedStatement statement = null;
+        String url = "jdbc:mysql://localhost:3306/escolasenai2";
+        String usuario = "root";
+        String senha = "";
+        
+        try {
+            
+            conexao = DriverManager.getConnection(url, usuario, senha);
+            String sql = "DELETE from aluno where aluno_ra = ?";
+           
+            statement = conexao.prepareStatement(sql);
+            statement.setString(1, jtxtf_RA_ALUNO.getText());
+           
+            int linhasAfetadas = statement.executeUpdate();
+           
+            if (linhasAfetadas > 0) {
+                jlbl_infor.setText("Dados excluidos");
+                jlbl_infor.setVisible(true);
+                System.out.println("Dados excluidos com sucesso!");
+                this.listagemCompleta("SELECT * FROM aluno ORDER BY aluno_nome ASC");
+            } else {
+                jlbl_infor.setText("Nenhum dado excluido.");
+                jlbl_infor.setVisible(true);
+                System.out.println("Nenhum dado excluido.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao EXCLUIR dados: " + e.getMessage());
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (conexao != null) {
+                    conexao.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Erro ao fechar conexão: " + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_jbtn_excluirActionPerformed
+
+    private void jbtn_listagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_listagemActionPerformed
+        // TODO add your handling code here:
+        this.listagemCompleta("SELECT * FROM aluno ORDER BY aluno_nome ASC");
+    }//GEN-LAST:event_jbtn_listagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,11 +467,14 @@ public class CRUDFORM extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbtn_Inserir;
     private javax.swing.JButton jbtn_atualizar;
     private javax.swing.JButton jbtn_encontrar;
     private javax.swing.JButton jbtn_excluir;
+    private javax.swing.JButton jbtn_listagem;
     private javax.swing.JButton jbtn_sair;
+    private javax.swing.JComboBox<String> jcmb_SEXO_ALUNO;
     private javax.swing.JLabel jlbl_CPF;
     private javax.swing.JLabel jlbl_NomeAluno;
     private javax.swing.JLabel jlbl_RA;
@@ -227,10 +482,10 @@ public class CRUDFORM extends javax.swing.JFrame {
     private javax.swing.JLabel jlbl_infor;
     private javax.swing.JLabel jlbl_sexo;
     private javax.swing.JPanel jpnl_home;
-    private javax.swing.JTextField jtxtf_CPF_ALU;
-    private javax.swing.JTextField jtxtf_DT_NASC_ALU;
-    private javax.swing.JTextField jtxtf_NOME_ALU;
-    private javax.swing.JTextField jtxtf_RA_ALUN;
-    private javax.swing.JTextField jtxtf_SEXO_ALU;
+    private javax.swing.JTable jtbl_aluno;
+    private javax.swing.JTextField jtxtf_CPF_ALUNO;
+    private javax.swing.JTextField jtxtf_DT_NASC_ALUNO;
+    private javax.swing.JTextField jtxtf_NOME_ALUNO;
+    private javax.swing.JTextField jtxtf_RA_ALUNO;
     // End of variables declaration//GEN-END:variables
 }
