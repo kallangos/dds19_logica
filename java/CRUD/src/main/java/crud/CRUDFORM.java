@@ -21,6 +21,7 @@ public class CRUDFORM extends javax.swing.JFrame {
      */
     public CRUDFORM() {
         initComponents();
+        jlbl_infor.setVisible(false);
     }
 
     /**
@@ -32,6 +33,7 @@ public class CRUDFORM extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpnl_home = new javax.swing.JPanel();
         jbtn_Inserir = new javax.swing.JButton();
         jbtn_atualizar = new javax.swing.JButton();
         jbtn_excluir = new javax.swing.JButton();
@@ -55,7 +57,9 @@ public class CRUDFORM extends javax.swing.JFrame {
         setName("CRUD"); // NOI18N
         setPreferredSize(new java.awt.Dimension(560, 370));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
+
+        jpnl_home.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbtn_Inserir.setText("Inserir");
         jbtn_Inserir.addActionListener(new java.awt.event.ActionListener() {
@@ -63,13 +67,13 @@ public class CRUDFORM extends javax.swing.JFrame {
                 jbtn_InserirActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtn_Inserir, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 240, -1, -1));
+        jpnl_home.add(jbtn_Inserir, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 240, -1, -1));
 
         jbtn_atualizar.setText("atualizar");
-        getContentPane().add(jbtn_atualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 240, -1, -1));
+        jpnl_home.add(jbtn_atualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 240, -1, -1));
 
         jbtn_excluir.setText("excluir");
-        getContentPane().add(jbtn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 240, -1, -1));
+        jpnl_home.add(jbtn_excluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 240, -1, -1));
 
         jbtn_encontrar.setText("encontrar");
         jbtn_encontrar.addActionListener(new java.awt.event.ActionListener() {
@@ -77,30 +81,30 @@ public class CRUDFORM extends javax.swing.JFrame {
                 jbtn_encontrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtn_encontrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
+        jpnl_home.add(jbtn_encontrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
 
         jtxtf_RA_ALUN.setEnabled(false);
         jtxtf_RA_ALUN.setPreferredSize(new java.awt.Dimension(70, 22));
-        getContentPane().add(jtxtf_RA_ALUN, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 19, 70, -1));
-        getContentPane().add(jtxtf_NOME_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 59, 232, -1));
-        getContentPane().add(jtxtf_DT_NASC_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 141, 122, -1));
-        getContentPane().add(jtxtf_CPF_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 101, 108, -1));
-        getContentPane().add(jtxtf_SEXO_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 181, 122, -1));
+        jpnl_home.add(jtxtf_RA_ALUN, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 19, 70, -1));
+        jpnl_home.add(jtxtf_NOME_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 59, 232, -1));
+        jpnl_home.add(jtxtf_DT_NASC_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 141, 122, -1));
+        jpnl_home.add(jtxtf_CPF_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 101, 108, -1));
+        jpnl_home.add(jtxtf_SEXO_ALU, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 181, 122, -1));
 
         jlbl_RA.setText("Registro Academico :");
-        getContentPane().add(jlbl_RA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jpnl_home.add(jlbl_RA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jlbl_NomeAluno.setText("Nome Aluno :");
-        getContentPane().add(jlbl_NomeAluno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        jpnl_home.add(jlbl_NomeAluno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         jlbl_dt_nasc.setText("Data Nascimento : ");
-        getContentPane().add(jlbl_dt_nasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 144, -1, -1));
+        jpnl_home.add(jlbl_dt_nasc, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 144, -1, -1));
 
         jlbl_CPF.setText("CPF ");
-        getContentPane().add(jlbl_CPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 104, -1, -1));
+        jpnl_home.add(jlbl_CPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 104, -1, -1));
 
         jlbl_sexo.setText("Sexo : ");
-        getContentPane().add(jlbl_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 184, -1, -1));
+        jpnl_home.add(jlbl_sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 184, -1, -1));
 
         jbtn_sair.setText("Sair");
         jbtn_sair.addActionListener(new java.awt.event.ActionListener() {
@@ -108,13 +112,15 @@ public class CRUDFORM extends javax.swing.JFrame {
                 jbtn_sairActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 281, 254, -1));
+        jpnl_home.add(jbtn_sair, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 281, 254, -1));
 
         jlbl_infor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jlbl_infor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbl_infor.setText("NAO ENCONTRADO");
+        jlbl_infor.setText("TESTE");
         jlbl_infor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jlbl_infor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 210, 102));
+        jpnl_home.add(jlbl_infor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 210, 102));
+
+        getContentPane().add(jpnl_home);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,6 +166,7 @@ public class CRUDFORM extends javax.swing.JFrame {
             jlbl_infor.setText("OK");
         } else {
             jlbl_infor.setText("Não Encontrado");
+            jlbl_infor.setVisible(true);
         }
         
         resultSet.close();
@@ -167,6 +174,8 @@ public class CRUDFORM extends javax.swing.JFrame {
         conexao.close();
         } catch (SQLException ex){
             System.out.println(ex.getMessage());
+            jlbl_infor.setText("Não Encontrado");
+            jlbl_infor.setVisible(true);
         }
     }//GEN-LAST:event_jbtn_encontrarActionPerformed
 
@@ -217,6 +226,7 @@ public class CRUDFORM extends javax.swing.JFrame {
     private javax.swing.JLabel jlbl_dt_nasc;
     private javax.swing.JLabel jlbl_infor;
     private javax.swing.JLabel jlbl_sexo;
+    private javax.swing.JPanel jpnl_home;
     private javax.swing.JTextField jtxtf_CPF_ALU;
     private javax.swing.JTextField jtxtf_DT_NASC_ALU;
     private javax.swing.JTextField jtxtf_NOME_ALU;
