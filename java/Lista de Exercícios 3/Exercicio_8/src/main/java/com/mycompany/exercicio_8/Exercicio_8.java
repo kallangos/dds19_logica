@@ -19,18 +19,19 @@ public class Exercicio_8 {
         Scanner sc = new Scanner(System.in);
         int nAval = 0;
         float media = 0, somaNotas = 0 ;
+        int [] vetorNotas ;
         
         System.out.print("Informe quantas notas este aluno teve ? :  " );
         nAval = sc.nextInt();
-        int vetorNotas[] = new int[nAval];
+        vetorNotas = new int[nAval];
         
-        for (int i = 0 ; i>=vetorNotas.length-1; i++){
+        for (int i = 0 ; i<=vetorNotas.length-1; i++){
             System.out.print("Entre com a " + (i+1) + "º nota :  " );
             vetorNotas[i] = sc.nextInt();
-            somaNotas=+vetorNotas[i];
+            somaNotas+=vetorNotas[i];
         }
         
-        media = somaNotas/vetorNotas.length-1;
-        System.out.println("Media = " + media);
+        media = somaNotas/vetorNotas.length;
+        System.out.printf("Media do aluno é igual a : " + media);
     }
 }
