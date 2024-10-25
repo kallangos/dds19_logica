@@ -16,8 +16,7 @@ public class Pergunta_02 {
         String recebeDado = "";
         int idade = 0;
         int dias  = 0 ;
-        
-        System.out.println("Hello World!");
+                
         recebeDado = JOptionPane.showInputDialog(null, "Entre com a idade da pessoa (em ANOS, MESES ou DIAS): ", "", JOptionPane.INFORMATION_MESSAGE);
         idade = Integer.parseInt(recebeDado);
         recebeDado = JOptionPane.showInputDialog(null, ""
@@ -36,8 +35,6 @@ public class Pergunta_02 {
                     dias = idade;
                     JOptionPane.showMessageDialog(null, idade/365 + "anos, " + idade/30+ "meses, " + dias + "dias.", "", JOptionPane.INFORMATION_MESSAGE);
                     }  
-        
-        
         
     }
 }
