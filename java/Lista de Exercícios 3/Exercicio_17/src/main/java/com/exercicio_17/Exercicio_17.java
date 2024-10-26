@@ -23,10 +23,7 @@ public class Exercicio_17 {
         String recebeDado = "";
         String listaGeral = "";
         String [][] nUsers;
-/*
-        FileWriter
-        PrintWriter;
-                */
+
         recebeDado =  JOptionPane.showInputDialog(null, "Quantos usuarios deseja cadastrar?", "Cad User", JOptionPane.INFORMATION_MESSAGE);
         System.out.print(recebeDado);
         nUsers = new String[Integer.parseInt(recebeDado)][3];
@@ -53,10 +50,11 @@ public class Exercicio_17 {
         
         gravar.printf("---------------------------- Listagem de Usuários ----------------------------\n");
         for (int i = 0 ; i<nUsers.length ; i++){
-            gravar.printf("| Nome : %2s   | Idade : %2s   | Email : %2s\n",  nUsers[i][0] , nUsers[i][1] , nUsers[i][2]);
+            gravar.printf("| Nome :  %2s\n| Idade : %2s\n| Email : %2s\n",  nUsers[i][0] , nUsers[i][1] , nUsers[i][2]);
             listaGeral = listaGeral + "| Nome : " + nUsers[i][0] + "   | Idade : " + nUsers[i][1] + "   | Email : " + nUsers[i][2]+ "\n";
+            gravar.printf("------------------------------------------------------------------------------\n");
         }
-        gravar.printf("\n----------------------------    Final da Lista    ----------------------------");
+        gravar.printf("\n* Final da Lista *");
         arquivo.close();
         
         
