@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class Pergunta_12 {
 
     public static void main(String[] args) {
-        int [] dadosInsert = new int[10];
+        int [] dadosInsert = new int[3];
         String recebeDado = "";
         int copia = 0;
         System.out.println("Hello World!");
@@ -41,10 +41,18 @@ public class Pergunta_12 {
          
          recebeDado = JOptionPane.showInputDialog(null, "Entre com um numero inteiro: ", "", JOptionPane.INFORMATION_MESSAGE);
          novoNum = Integer.parseInt(recebeDado);
-         for (int i = 0 ; i <dadosInsert.length-1 ; i++){
-             
+         
+         for (int i = 0 ; i <dadosInsert.length ; i++){
+             if (novoNum<dadosInsert[i])
+                 copia = dadosInsert[i];
+                 dadosInsert[i]=novoNum;
+                 dadosInsert[i+1] = copia;
          }
 
+         System.out.println("NOVO vetor ordenando");    
+         for (int i = 0 ; i<=dadosInsert.length-1 ; i++){
+            System.out.println(dadosInsert[i]);    
+         }
          
         //JOptionPane.showMessageDialog(null, idade + "anos, " + (dias/30)+ "meses, " + dias + "dias.", "", JOptionPane.INFORMATION_MESSAGE);
         
