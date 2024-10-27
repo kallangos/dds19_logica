@@ -47,12 +47,6 @@ public class Exercicio_18_2 {
                 "Salário liquido         : " + formatter.format(salarioLiquido) + "\n" 
                 ,"Calc. Salario Liquido",
                 JOptionPane.INFORMATION_MESSAGE);    
-        /*
-        System.out.println(
-                "Salário Bruto: "    + formatter.format(salarioBruto) + "\n" + 
-                "Imposto de Renda: " + formatter.format(iRenda)       + "\n" 
-        );
-        */
-        
+       
     }
 }
