@@ -17,7 +17,8 @@ Valor pago ao Sindicato (5%): A contribuição destinada ao sindicato.
 Salário Líquido: O valor final que o funcionário receberá após todos os descontos obrigatórios.
 Após realizar os cálculos, o programa deve exibir o resultado no seguinte formato:
 
-+ Salário Bruto: R$ 3000,00
+
+- Salário Bruto: R$ 3000,00
 - Imposto de Renda (11%): R$ 330,00
 - INSS (8%): R$ 240,00
 - Sindicato (5%): R$ 150,00
