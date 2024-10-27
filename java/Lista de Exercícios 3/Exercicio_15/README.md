@@ -1,20 +1,19 @@
 # Modulo DDS19-2-19
 
-18 - Uma empresa deseja automatizar o cálculo de férias de seus funcionários. O sistema deve solicitar o nome e o salário de cada funcionário e calcular o valor das férias (considerando o salário bruto e o adicional de 1/3).
+15 - Pesquisa de Opinião Sobre Música
 
-* Solicite o número de funcionários para cálculo.
-* Armazene os nomes dos funcionários em um vetor.
-* Armazene os salários em outro vetor.
-* Calcule o valor das férias (salário + 1/3) e mostre o resultado utilizando JOptionPane.showMessageDialog.
-* Salve o nome e o valor das férias de cada funcionário em um arquivo de texto com FileWriter e PrintWriter.
+Uma rádio local deseja fazer uma pesquisa de opinião para descobrir os gêneros musicais preferidos de seus ouvintes. O sistema deve registrar os votos e salvar os resultados em um arquivo de texto.
+
+Solicite o número de pessoas que participarão da pesquisa.
+Armazene os votos em um vetor onde cada posição representa um gênero musical (Ex.: 0 para Rock, 1 para Pop, etc.).
+Use uma estrutura de repetição para contar quantos votos cada gênero recebeu.
+Exiba os resultados da pesquisa com JOptionPane.showMessageDialog.
+Salve os resultados em um arquivo de texto utilizando FileWriter e PrintWriter.
  
 
 Trabalhando com:
 - FileWriter;
 - PrintWriter;
-- NumberFormat;
-- NumberFormat.getCurrencyInstance();
-- formatter.format;
 - JOptionPane.showInputDialog;
 - JOptionPane.showMessageDialog
 - Vetor Dinâmico;

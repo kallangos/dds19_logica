@@ -30,7 +30,10 @@ public class Exercicio_18 {
         FileWriter
         PrintWriter;
                 */
-        recebeDado =  JOptionPane.showInputDialog(null, "Quantos funcionários deseja cadastrar?", "Cad Funcionário", JOptionPane.INFORMATION_MESSAGE);
+        recebeDado =  JOptionPane.showInputDialog(null, 
+                "Quantos funcionários deseja cadastrar?", 
+                "Cad Funcionário", 
+                JOptionPane.INFORMATION_MESSAGE);
         funcionarios = new String[Integer.parseInt(recebeDado)];
         salarios = new String[Integer.parseInt(recebeDado)];
         ferias = new String[Integer.parseInt(recebeDado)];
@@ -53,7 +56,8 @@ public class Exercicio_18 {
                 
                 JOptionPane.showMessageDialog(null, 
                         "O funcionario "+ funcionarios[i] + " recebera : \n" 
-                        + ferias[i] + " de férias (sal. + bonus 1/3)", "Extrato", 
+                        + ferias[i] + " de férias (sal. + bonus 1/3)", 
+                        "Extrato", 
                         JOptionPane.INFORMATION_MESSAGE);
         }
         
