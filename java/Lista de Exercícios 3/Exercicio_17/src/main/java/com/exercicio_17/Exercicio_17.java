@@ -25,7 +25,6 @@ public class Exercicio_17 {
         String [][] nUsers;
 
         recebeDado =  JOptionPane.showInputDialog(null, "Quantos usuarios deseja cadastrar?", "Cad User", JOptionPane.INFORMATION_MESSAGE);
-        System.out.print(recebeDado);
         nUsers = new String[Integer.parseInt(recebeDado)][3];
         
         for (int i = 0 ; i<nUsers.length ; i++){

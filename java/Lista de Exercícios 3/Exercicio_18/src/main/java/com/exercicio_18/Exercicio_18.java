@@ -31,7 +31,6 @@ public class Exercicio_18 {
         PrintWriter;
                 */
         recebeDado =  JOptionPane.showInputDialog(null, "Quantos funcionários deseja cadastrar?", "Cad Funcionário", JOptionPane.INFORMATION_MESSAGE);
-        System.out.print(recebeDado);
         funcionarios = new String[Integer.parseInt(recebeDado)];
         salarios = new String[Integer.parseInt(recebeDado)];
         ferias = new String[Integer.parseInt(recebeDado)];

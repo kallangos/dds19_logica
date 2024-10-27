@@ -1,0 +1,8 @@
+------ Radio TRETA - Generos Votados ------
+|  3 Voto(s) para o genero ROCK.
+|  2 Voto(s) para o genero PoP.
+|  3 Voto(s) para o genero Dance.
+|  1 Voto(s) para o genero Trance.
+--------------------------------------------
+
+* Final da Lista *
