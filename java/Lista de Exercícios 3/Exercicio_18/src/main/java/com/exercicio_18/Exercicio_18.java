@@ -24,12 +24,6 @@ public class Exercicio_18 {
         String [] ferias;
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         
-
-
-/*
-        FileWriter
-        PrintWriter;
-                */
         recebeDado =  JOptionPane.showInputDialog(null, 
                 "Quantos funcionários deseja cadastrar?", 
                 "Cad Funcionário", 
