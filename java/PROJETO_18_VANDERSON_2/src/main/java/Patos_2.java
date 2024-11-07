@@ -202,30 +202,24 @@ public class Patos_2 extends javax.swing.JFrame {
         Connection conexao = null;
         PreparedStatement statement = null;
        
-        String url = "jdbc:mysql://localhost:3306/db_escola";
+        String url = "jdbc:mysql://localhost:3306/patos";
         String usuario = "root";
         String senha = "";
         
        try {
             conexao = DriverManager.getConnection(url, usuario, senha);
            
-            String sql = "INSERT INTO aluno (cpf, nome) VALUES (?, ?)";
+            String sql = "INSERT INTO patos (pato_nome, pato_descricao) VALUES (?, ?)";
            
             statement = conexao.prepareStatement(sql);
-           //statement.setString(1, jTextPane1_ID.getText());
+           statement.setString(1, jTextField2.getText());
+           statement.setString(2, jTextField3.getText());
            
             
             //statement.setString(1, jTextPane1_CPF.getText()); // CPF
             //statement.setString(2, jTextPane1_NOME.getText()); // NOME
             //statement.setString(2, jTextPane1_NOME.getText()); // NOME
-            if (jCheckBox1.isSelected()){
-                statement.setString(1, "1548");//jTextPane1_CPF.getText()); // CPF
-            }
-            else{
-                
-                
-            }
-            statement.setString(2, (String) jComboBox1.getSelectedItem());
+
             //statement.execute();
            // statement.close();
            
@@ -233,21 +227,15 @@ public class Patos_2 extends javax.swing.JFrame {
            
             if (linhasAfetadas > 0) {
                 
-                label_yes.setVisible(true);
-                label_no.setVisible(false);
                 System.out.println("Dados inseridos com sucesso!");
-                this.PopularJTable("SELECT * FROM aluno ORDER BY id DESC");
-                 insert into patos ()   
+                this.jButton1ActionPerformed(evt);
+//                 insert into patos ();   
                 
             } else {
                 System.out.println("Nenhum dado inserido.");
-                label_yes.setVisible(false);
-                label_no.setVisible(true);
             }
          } catch (SQLException e) {
             System.out.println("Erro ao inserir dados: " + e.getMessage());
-            label_yes.setVisible(false);
-                label_no.setVisible(true);
         } finally {
             try {
                 if (statement != null) {
@@ -258,9 +246,8 @@ public class Patos_2 extends javax.swing.JFrame {
                 }
             } catch (SQLException e) {
                 System.out.println("Erro ao fechar conexão: " + e.getMessage());
-                label_yes.setVisible(false);
-                label_no.setVisible(true);
-            }}
+            }
+       }
        
         
         
