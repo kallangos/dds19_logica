@@ -229,6 +229,7 @@ public class Patos_2 extends javax.swing.JFrame {
                 
                 System.out.println("Dados inseridos com sucesso!");
                 this.jButton1ActionPerformed(evt);
+                statement.close();
 //                 insert into patos ();   
                 
             } else {
